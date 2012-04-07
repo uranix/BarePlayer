@@ -1,0 +1,19 @@
+kernel.c: multiboot.h types.h output.h gdt.h idt.h pic.h pit.h \
+ mm.h paging.h vm8086.h intrin.h
+	touch -c kernel.c
+output.c: output.h multiboot.h types.h intrin.h
+	touch -c output.c
+idt.c: idt.h types.h pic.h intrin.h
+	touch -c idt.c
+gdt.c: gdt.h types.h
+	touch -c gdt.c
+pic.c: pic.h types.h intrin.h
+	touch -c pic.c
+pit.c: pit.h intrin.h types.h
+	touch -c pit.c
+mm.c: mm.h types.h intrin.h
+	touch -c mm.c
+paging.c: paging.h types.h mm.h
+	touch -c paging.c
+vm8086.c: vm8086.h types.h output.h multiboot.h
+	touch -c vm8086.c
